@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Markets4You Nigeria</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="markets4you-icon-full.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #003f2d;
+      padding: 15px 30px;
+      color: white;
+      flex-wrap: wrap;
+    }
+
+    .navbar-left {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #049645;
+    }
+
+    .badge {
+      background-color: #00b16a;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 0.9em;
+      color: white;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links li a:hover {
+      color: #00b16a;
+    }
+
+    .navbar-right {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .lang-select {
+      background-color: transparent;
+      border: 1px solid white;
+      color: rgb(12, 223, 107);
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .btn-login {
+      background-color: #00b16a;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 5px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.1s ease;
+    }
+
+    .btn-login:hover { background-color: #00995a; }
+
+    .btn-signup {
+      background-color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 5px;
+      color: #003f2d;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .btn-signup:hover { background-color: #e0e0e0; }
+
+    /* HERO */
+    .hero {
+      background: url('https://www.markets4you.com/ng/wp-content/themes/markets4you/functions/widgets/front-page-banner/img/phone/img-phone-desktop-1.0x.webp') no-repeat center center;
+      background-size: cover;
+      position: relative;
+      padding: 100px 20px;
+      text-align: center;
+      color: white;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(2, 34, 25, 0.85);
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .hero h1 { font-size: 3em; margin-bottom: 20px; }
+    .hero p { font-size: 1.3em; margin-bottom: 40px; }
+
+    /* Stats */
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-bottom: 50px;
+    }
+
+    .stat {
+      background: rgba(5, 177, 82, 0.199);
+      padding: 20px 30px;
+      border-radius: 12px;
+      font-size: 1.1em;
+      min-width: 200px;
+      transition: transform 0.3s ease;
+    }
+
+    .stat:hover { transform: scale(1.05); }
+
+    .cta-button {
+      background-color: #00b16a;
+      color: rgb(1, 3, 2);
+      padding: 18px 40px;
+      font-size: 1.2em;
+      text-decoration: none;
+      border-radius: 8px;
+      box-shadow: 0 0 15px #00b16a;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #00995a;
+      box-shadow: 0 0 25px #00b16a;
+    }
+
+    /* Sections */
+    .section { padding: 80px 20px; }
+    .bg-dark { background: #002a1f !important; }
+
+    /* Footer */
+    footer {
+      background: #111;
+      color: #aaa;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    footer a {
+      color: #25D366;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    /* WhatsApp floating button */
+    .whatsapp-float {
+      position: fixed; bottom: 20px; right: 20px;
+      background: #25D366; color: white; border-radius: 50%;
+      padding: 15px; font-size: 24px; text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+
+    .whatsapp-float:hover { background: #03411b; }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+      }
+
+      .navbar-right {
+        margin-top: 10px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero h1 { font-size: 2em; }
+      .hero p { font-size: 1em; }
+      .stat { min-width: 150px; font-size: 1em; }
+      .cta-button { padding: 14px 25px; font-size: 1em; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="navbar-left">
+      <div class="logo"> <img src="markets4you-logo-17th.png" width="250" alt="markets4you"></div>
+      <div class="badge">18 Years of Excellence</div>
+      <ul class="nav-links">
+        <li><a href="#about">Trading</a></li>
+        <li><a href="#promo">Promotions</a></li>
+        <li><a href="#ib">Partners</a></li>
+        <li><a href="#about">About Us</a></li>
+      </ul>
+    </div>
+    <div class="navbar-right">
+      <select class="lang-select">
+        <option value="en">EN</option>
+        </select>
+      <div class="right">
+      <a href="https://account.markets4you.online/en/user-registration/?affid=nkatsrw"
+      <button class="btn-login">Login</button> 
+      <button class="btn-signup">Create Account</button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Making the Markets Work for You</h1>
+      <p>Experience advanced trading technologies and unlock your earning potential with Markets4you.</p>
+
+      <div class="stats">
+        <div class="stat">3M+ Open accounts</div>
+        <div class="stat">1.3B+ Orders executed</div>
+        <div class="stat">18 years from Forex4you to Markets4you</div>
+      </div>
+
+      <a class="cta-button" href="https://account.markets4you.com/en/user-registration/?affid=nkatsrw" rel="nofollow">
+    Open a real account →
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section text-center">
+    <div class="container">
+      <h2>Why Markets4You?</h2>
+      <p>We provide traders and partners with world-class conditions, high rebates, and a trusted brand.</p>
+      <div class="row mt-4">
+        <div class="col-md-4"><h4>Trusted Broker</h4><p>Licensed and regulated with strong global presence.</p></div>
+        <div class="col-md-4"><h4>High Rebates</h4><p>Maximize your earnings with competitive commission structure.</p></div>
+        <div class="col-md-4"><h4>Support</h4><p>24/7 multilingual support for you and your clients.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IB Partnership -->
+  <section id="ib" class="section bg-light text-center">
+    <div class="container">
+      <img src="https://www.markets4you.com/ng/wp-content/themes/markets4you/functions/widgets/front-page-banner/img/phone/img-phone-desktop-1.0x.webp" width="300" alt="img-phone">
+      <h2>IB Partnership Benefits</h2>
+      <p>Work with Markets4You as an Introducing Broker and unlock unlimited growth opportunities.</p>
+      <ul class="list-unstyled">
+        <li>Generous commissions</li>
+        <li>Personal IB manager</li>
+        <li>Fast and reliable payouts</li>
+        <li>Access to marketing materials</li>
+      </ul>
+      <a href="https://partners.markets4you.online/?affid=nkatsrw" class="btn btn-primary btn-lg mt-3">Become an IB</a>
+    </div>
+  </section>
+
+   <!-- Call to Action -->
+  <section class="section bg-dark text-white text-center">
+    <h2>Making the Markets Work for You</h2>
+    <a href="https://account.markets4you.online/en/user-registration/pro_stp_standard?account_client=mt5&affid=nkatsrw" class=" btn btn-success btn-lg mt-3">Start Trading Now</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Market4You IB | All Rights Reserved</p>
+    <p>
+      <a href="https://www.markets4you.com/ng/privacy-policy/">Privacy Policy</a> | 
+      <a href="https://www.markets4you.com/ng/risk-disclosure/">Risk Disclosure</a> |
+      <a href="https://www.markets4you.com/ng/complaints/">Complaints</a>
+    </p>
+  </footer>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/2348089549025" class="whatsapp-float" target="_blank">💬</a>
+
+</body>
+</html>
