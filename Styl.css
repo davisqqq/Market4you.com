@@ -1,0 +1,71 @@
+.referral-terms {
+  background: #f8f9fa;
+  padding: 60px 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.referral-terms .container {
+  max-width: 900px;
+  margin: auto;
+}
+
+.referral-terms h2 {
+  color: #003f2d;
+  margin-bottom: 30px;
+  font-size: 2em;
+  text-align: center;
+}
+
+.referral-terms h3 {
+  color: #049645;
+  margin-top: 30px;
+  font-size: 1.3em;
+}
+
+.referral-terms p,
+.referral-terms ul {
+  color: #333;
+  font-size: 1em;
+  line-height: 1.6;
+}
+
+.referral-terms ul {
+  padding-left: 20px;
+}
+
+.referral-terms a {
+  color: #00b16a;
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  background: #111;
+  color: #ffffff;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+footer a {
+  color: #25D366;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  border-radius: 50%;
+  padding: 15px;
+  font-size: 24px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.whatsapp-float:hover {
+  background: #03411b;
+}

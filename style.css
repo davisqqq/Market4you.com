@@ -1,0 +1,590 @@
+/* Base Reset */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 15px;
+}
+
+/* NAVBAR */
+.navbar-custom {
+  background-color: #003f2ddc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px 20px;
+}
+
+.logo img {
+  height: 50px;
+}
+
+.badge {
+  background-color: #00b16a;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.9em;
+  color: white;
+  margin-left: 15px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a {
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  color: #000503;
+}
+.navbar-custom {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #003f2d;
+  padding: 10px 20px;
+}
+body {
+  margin-top: 0px; /* Adjust based on navbar height */
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #003f2d;
+  padding: 10px 0;
+  border-radius: 6px;
+  min-width: 180px;
+  z-index: 1000;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 10px 15px;
+  color: white;
+}
+
+.dropdown-menu li a:hover {
+  background: #00b16a;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.lang-select {
+  background-color: transparent;
+  border: 1px solid white;
+  color: #0cdf6b;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-login {
+  background-color: #000000;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 15px;
+  color: rgb(5, 110, 28);
+  font-weight: bold;
+}
+
+.btn-login:hover {
+  background-color: #03521a;
+}
+
+.btn-signup {
+  background-color: rgb(0, 0, 0);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 15px;
+  color: #034e13;
+  font-weight: bold;
+}
+
+.btn-signup:hover {
+  background-color: #024e0c;
+}
+.web-banner {
+  text-align: center;
+  margin: 40px auto;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.web-banner img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.web-banner img:hover {
+  transform: scale(1.05);
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger span {
+  height: 3px;
+  width: 25px;
+  background: white;
+  margin: 4px 0;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background-color: #003f2d;
+  padding: 20px;
+}
+
+.mobile-menu.active {
+  display: flex;
+}
+
+.mobile-menu a {
+  color: white;
+  padding: 10px 0;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.dropdown-submenu {
+  display: none;
+  list-style: none;
+  padding-left: 15px;
+}
+
+.dropdown-submenu.active {
+  display: block;
+}
+
+.dropdown-submenu li a {
+  color: #ccc;
+  padding: 8px 0;
+}
+
+.dropdown-submenu li a:hover {
+  color: #00b16a;
+}
+
+/* HERO */
+.hero {
+  background: url('https://www.markets4you.com/ng/wp-content/themes/markets4you/functions/widgets/front-page-banner/img/phone/img-phone-desktop-1.0x.webp') no-repeat center center;
+  background-size: cover;
+  position: relative;
+  padding: 100px 20px;
+  text-align: center;
+  color: white;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(2, 34, 25, 0.85);
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: auto;
+}
+
+.hero h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.3em;
+  margin-bottom: 40px;
+}
+
+/* Stats */
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+.stat {
+  background: rgba(0, 0, 0, 0.199);
+  padding: 20px 30px;
+  border-radius: 12px;
+  font-size: 1.1em;
+  min-width: 200px;
+  transition: transform 0.3s ease;
+}
+
+.stat:hover {
+  transform: scale(1.05);
+}
+
+.cta-button {
+  background-color: #010805;
+  color: #fff;
+  padding: 18px 40px;
+  font-size: 1.2em;
+  text-decoration: none;
+  border-radius: 8px;
+  box-shadow: 0 0 15px #00b16a;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #00995a;
+  box-shadow: 0 0 25px #00b16a;
+}
+
+/* Sections */
+.section {
+  padding: 80px 20px;
+}
+
+.bg-dark {
+  background: #002a1f !important;
+}
+
+/* Footer */
+footer {
+  background: #111;
+  color: #aaa;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+footer a {
+  color: #25D366;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  border-radius: 50%;
+  padding: 15px;
+  font-size: 24px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.whatsapp-float:hover {
+  background: #03411b;
+}
+
+/* Responsive Fixes */
+@media (max-width: 991px) {
+  .badge {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .navbar-left,
+  .navbar-right {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .hero h1 {
+    font-size: 2em;
+  }
+
+  .hero p {
+    font-size: 1em;
+  }
+
+  .stat {
+    min-width: 150px;
+    font-size: 1em;
+  }
+
+  .cta-button {
+    padding: 14px 25px;
+    font-size: 1em;
+  }
+}
+.nav-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links li a {
+  color: white;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+/* Mobile Toggle */
+@media (max-width: 768px) {
+  .nav-center {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+  }
+
+  .hamburger span {
+    height: 3px;
+    width: 25px;
+    background: white;
+    margin: 4px 0;
+  }
+
+  .mobile-menu {
+    display: none;
+    flex-direction: column;
+    background-color: #003f2d;
+    padding: 20px;
+  }
+
+  .mobile-menu.active {
+    display: flex;
+  }
+
+  .mobile-menu a {
+    color: white;
+    padding: 10px 0;
+    text-decoration: none;
+    font-weight: bold;
+  }
+}
+.mobile-auth {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mobile-auth .btn-login,
+.mobile-auth .btn-signup {
+  width: 100%;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .nav-center,
+  .navbar-right {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+
+  .mobile-menu.active {
+    display: flex;
+  }
+}
+/* Newsletter Popup */
+.newsletter-popup {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 63, 45, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.newsletter-content {
+  background: rgb(255, 255, 255);
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  position: relative;
+}
+
+.newsletter-content h2 {
+  color: #003f2d;
+  margin-bottom: 10px;
+}
+
+.newsletter-content p {
+  font-size: 1.1em;
+  margin-bottom: 20px;
+  color: #049645;
+}
+
+.newsletter-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.newsletter-content input[type="email"] {
+  padding: 10px;
+  border: 1px solid #07a01cc4;
+  border-radius: 6px;
+  font-size: 1em;
+}
+
+.newsletter-content button {
+  background-color: #0b5f3e;
+  color: rgb(255, 255, 255);
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.newsletter-content button:hover {
+  background-color: #065534;
+}
+
+.newsletter-content small {
+  display: block;
+  margin-top: 10px;
+  color: #666;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px; right: 15px;
+  font-size: 1.5em;
+  cursor: pointer;
+  color: #003f2d;
+}
+#about img {
+  margin-bottom: 19px;
+  transition: transform 0.3s ease;
+}
+
+#about img:hover {
+  transform: scale(1.1);
+}
+.ib-section {
+  position: relative;
+  background: url('https://www.markets4you.com/ng/wp-content/themes/markets4you/functions/widgets/front-page-banner/img/phone/img-phone-desktop-1.0x.webp') no-repeat center center;
+  background-size: cover;
+  padding: 100px 20px;
+  color: white;
+  text-align: center;
+}
+
+.ib-overlay {
+  background: rgba(0, 63, 45, 0.85); /* dark green overlay */
+  padding: 60px 20px;
+  border-radius: 100px;
+  max-width: 800px;
+  margin: auto;
+  animation: fadeIn 1.2s ease;
+}
+
+.ib-content h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #00b16a;
+}
+
+.ib-content p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+
+.ib-content ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+.ib-content ul li {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
+
+.ib-content a.btn {
+  background-color: #000000;
+  border: none;
+  padding: 12px 25px;
+  font-weight: bold;
+  color: white;
+  border-radius: 90px;
+  box-shadow: 0 0 10px #00b16a;
+  transition: background 0.3s ease;
+}
+
+.ib-content a.btn:hover {
+  background-color: #06550a;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
